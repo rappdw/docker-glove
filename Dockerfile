@@ -1,12 +1,10 @@
-FROM ubuntu:zesty
+FROM python:3.6.0
 
 RUN apt-get update && apt-get install -y \
         curl \
         gcc \
         git \
         make \
-        python \
-        python-pip \
         unzip \
     && apt-get clean
 
