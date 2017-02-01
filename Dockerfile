@@ -1,10 +1,12 @@
-FROM python:3.6.0
+FROM ubuntu:zesty
 
 RUN apt-get update && apt-get install -y \
         curl \
         gcc \
         git \
         make \
+        python \
+        python-pip \
         unzip \
     && apt-get clean
 
@@ -16,9 +18,7 @@ RUN git clone https://github.com/stanfordnlp/GloVe \
     && pip install \
         numpy
 
-RUN apt-get purge -y gcc \
-    && apt -y autoremove \
-    && apt-get clean \
+RUN apt-get clean \
     && rm -rf /var/tmp /tmp /var/lib/apt/lists/*
 
 VOLUME /data
