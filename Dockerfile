@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /root
 
-RUN git clone https://github.com/stanfordnlp/GloVe \
+RUN git clone https://github.com/stanfordnlp/GloVe --branch 1.2 --single-branch \
     && cd GloVe \
     && make \
     && pip install \
